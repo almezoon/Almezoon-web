@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Building2, CheckCircle, Users, Award } from 'lucide-react'
+import { Building2, CheckCircle, Award } from 'lucide-react'
 
 const Clients = () => {
   const [ref, inView] = useInView({

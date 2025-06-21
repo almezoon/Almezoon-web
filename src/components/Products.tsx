@@ -210,7 +210,7 @@ const Products = () => {
             Custom Solutions Available
           </span>
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Don't see what you're looking for?
+            Don&apos;t see what you&apos;re looking for?
           </h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             We offer custom stone solutions and have access to hundreds of additional varieties. Contact us to discuss your specific requirements.

@@ -126,7 +126,7 @@ const Hero = () => {
               className="inline-block mb-6"
             >
               <span className="px-4 py-2 bg-amber-600 text-white text-sm font-semibold rounded-full">
-                Since 2000 – UAE's Trusted Marble Experts
+                                    Since 2000 – UAE&apos;s Trusted Marble Experts
               </span>
             </motion.div>
 

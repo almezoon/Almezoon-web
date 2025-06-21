@@ -101,13 +101,13 @@ const About = () => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Founding Story</h4>
                 <p className="text-gray-600">
-                  Founded in 2000, Al Mezoon began with a small team and has grown into a trusted name with over two decades of experience. Today, we're known for premium-quality stones and exceptional craftsmanship across the UAE.
+                  Founded in 2000, Al Mezoon began with a small team and has grown into a trusted name with over two decades of experience. Today, we&apos;re known for premium-quality stones and exceptional craftsmanship across the UAE.
                 </p>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Our Facilities</h4>
                 <p className="text-gray-600">
-                  Our state-of-the-art 1800 sqm facility and 800 sqm warehouse allow us to produce 5000+ kitchens annually, meeting every client's unique style and needs through precision fabrication and flawless installation.
+                  Our state-of-the-art 1800 sqm facility and 800 sqm warehouse allow us to produce 5000+ kitchens annually, meeting every client&apos;s unique style and needs through precision fabrication and flawless installation.
                 </p>
               </div>
             </div>
