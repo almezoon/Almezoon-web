@@ -63,20 +63,20 @@ const Hero = () => {
     {
       title: "Expert Fabrication",
       subtitle: "State-of-the-art manufacturing facility",
-      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923721/AVI_4278-min_c7ljxa.jpg",
-      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923721/AVI_4278-min_c7ljxa.jpg")
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926427/AVI_4278-min_c7ljxa-min_ws3j0g.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926427/AVI_4278-min_c7ljxa-min_ws3j0g.jpg")
     },
     {
       title: "Professional Installation",
       subtitle: "Precision fitting by skilled craftsmen",
-      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923815/AVI_4205_cwtbg4.jpg",
-      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923815/AVI_4205_cwtbg4.jpg")
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926425/AVI_4205_cwtbg4-min_umyvyc.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926425/AVI_4205_cwtbg4-min_umyvyc.jpg")
     },
     {
       title: "Quality Assurance",
       subtitle: "25+ years of excellence in UAE",
-      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923927/AVI_4146_kxza4d.jpg",
-      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923927/AVI_4146_kxza4d.jpg")
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926426/AVI_4146_kxza4d-min_jfp1hw.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926426/AVI_4146_kxza4d-min_jfp1hw.jpg")
     }
   ]
 
