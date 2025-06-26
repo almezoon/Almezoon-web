@@ -10,7 +10,7 @@ Al Mezoon Marbles & Granites Industries LLC has been a trusted name in the UAE's
 - Professional stone fabrication services
 - Expert installation with project management
 - 25+ years of industry experience
-- 5000+ kitchens fabricated annually
+- 3000+ kitchens fabricated annually
 
 ## 🚀 Technologies Used
 

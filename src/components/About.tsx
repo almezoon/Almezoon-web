@@ -103,7 +103,7 @@ const About = () => {
 
   const stats = [
     { number: "25+", label: "Years of Excellence", icon: Award },
-    { number: "5000+", label: "Kitchens Annually", icon: Users },
+    { number: "3000+", label: "Kitchens Annually", icon: Users },
     { number: "1800", label: "SqM Facility", icon: Factory },
     { number: "800", label: "SqM Warehouse", icon: CheckCircle },
   ]
@@ -157,7 +157,7 @@ const About = () => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Our Facilities</h4>
                 <p className="text-gray-600">
-                  Our state-of-the-art 1800 sqm facility and 800 sqm warehouse allow us to produce 5000+ kitchens annually, meeting every client&apos;s unique style and needs through precision fabrication and flawless installation.
+                  Our state-of-the-art 1800 sqm facility and 800 sqm warehouse allow us to produce 3000+ kitchens annually, meeting every client&apos;s unique style and needs through precision fabrication and flawless installation.
                 </p>
               </div>
             </div>
