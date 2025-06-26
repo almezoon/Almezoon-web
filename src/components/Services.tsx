@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Scissors, Wrench, Truck, CheckCircle, Factory, Settings } from 'lucide-react'
+import { Scissors, Wrench, Truck, CheckCircle, Factory } from 'lucide-react'
 
 const Services = () => {
   const [ref, inView] = useInView({
