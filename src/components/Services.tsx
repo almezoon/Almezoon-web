@@ -196,7 +196,7 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
