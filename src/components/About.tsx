@@ -291,16 +291,16 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924630/AVI_4448_zisizr.jpg",
-                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924630/AVI_4448_zisizr.jpg")
+                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925319/AVI_40412_y15pfe.jpg",
+                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925319/AVI_40412_y15pfe.jpg")
               },
               {
-                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924684/AVI_4400_v2dtbt.jpg",
-                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924684/AVI_4400_v2dtbt.jpg")
+                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925267/AVI_4293_vwttcw.jpg",
+                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925267/AVI_4293_vwttcw.jpg")
               },
               {
-                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924667/AVI_4435_et2vgc.jpg",
-                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924667/AVI_4435_et2vgc.jpg")
+                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925183/AVI_4333_tzeyuq.jpg",
+                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925183/AVI_4333_tzeyuq.jpg")
               }
             ].map((image, index) => (
               <motion.div
