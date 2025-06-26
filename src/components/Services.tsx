@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Scissors, Wrench, Truck, CheckCircle, Factory } from 'lucide-react'
@@ -9,6 +10,55 @@ const Services = () => {
     triggerOnce: true,
     threshold: 0.1,
   })
+  
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  // Helper function to get responsive image URL based on screen width
+  const getResponsiveImageUrl = (baseUrl: string): { mobile: string; tablet: string; desktop: string } => {
+    // Remove any existing transformation parameters
+    const urlParts = baseUrl.split('/upload/');
+    const baseUrlWithoutParams = urlParts[0] + '/upload/' + urlParts[1].split('/').slice(1).join('/');
+    
+    return {
+      mobile: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_640,c_fill/'),
+      tablet: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_1280,c_fill/'),
+      desktop: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_1600,c_fill/')
+    };
+  };
+
+  // Update window width on client side
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Define service type
+  type Service = {
+    icon: any;
+    title: string;
+    description: string;
+    features: string[];
+    image: string;
+    responsiveImages: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  };
+
+  // Get appropriate image URL based on window width
+  const getResponsiveImage = (service: Service): string => {
+    if (windowWidth === 0) return service.image; // Default for SSR
+    if (windowWidth < 768) return service.responsiveImages.mobile;
+    if (windowWidth < 1280) return service.responsiveImages.tablet;
+    return service.responsiveImages.desktop;
+  };
 
   const services = [
     {
@@ -16,21 +66,24 @@ const Services = () => {
       title: "Fabrication",
       description: "Custom cutting and shaping of stones with high-precision finishes, including kitchen countertops, vanity tops, and wall cladding.",
       features: ["Custom Cutting", "Precision Finish", "Quality Control"],
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925956/AVI_4406-min_hrhyjx.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925956/AVI_4406-min_hrhyjx.jpg")
     },
     {
       icon: Wrench,
       title: "Installation",
       description: "On-site expert installation of marble, granite, quartz, and porcelain with full project management for perfect finish.",
       features: ["Expert Team", "Project Management", "Perfect Finish"],
-      image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926112/AVI_4157-min_qmxp4s.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750926112/AVI_4157-min_qmxp4s.jpg")
     },
     {
       icon: Truck,
       title: "Material Supply",
       description: "Premium stones sourced from top global quarries, including marble, granite, quartz, and porcelain in bulk quantities.",
       features: ["Global Sourcing", "Premium Quality", "Bulk Supply"],
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925707/AVI_4413_copy-min_hafwmp.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750925707/AVI_4413_copy-min_hafwmp.jpg")
     }
   ]
 
@@ -86,7 +139,7 @@ const Services = () => {
               {/* Service Image */}
               <div className="relative overflow-hidden rounded-xl mb-6">
                 <img
-                  src={service.image}
+                  src={getResponsiveImage(service)}
                   alt={service.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
