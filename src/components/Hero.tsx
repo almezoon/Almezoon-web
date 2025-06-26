@@ -6,27 +6,77 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  // Helper function to get responsive image URL based on screen width
+  const getResponsiveImageUrl = (baseUrl: string): { mobile: string; tablet: string; desktop: string } => {
+    // Remove any existing transformation parameters
+    const urlParts = baseUrl.split('/upload/');
+    const baseUrlWithoutParams = urlParts[0] + '/upload/' + urlParts[1].split('/').slice(1).join('/');
+    
+    return {
+      mobile: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_640,c_fill/'),
+      tablet: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_1280,c_fill/'),
+      desktop: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_1920,c_fill/')
+    };
+  };
+
+  // Update window width on client side
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Define slide type
+  type Slide = {
+    title: string;
+    subtitle: string;
+    image: string;
+    responsiveImages: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  };
+
+  // Get appropriate image URL based on window width
+  const getResponsiveImage = (slide: Slide): string => {
+    if (windowWidth === 0) return slide.image; // Default for SSR
+    if (windowWidth < 768) return slide.responsiveImages.mobile;
+    if (windowWidth < 1280) return slide.responsiveImages.tablet;
+    return slide.responsiveImages.desktop;
+  };
 
   const slides = [
     {
       title: "Premium Stone Craftsmanship",
       subtitle: "Luxury marble installations for elite projects",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923021/008_jrceqq.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923021/008_jrceqq.jpg")
     },
     {
       title: "Expert Fabrication",
       subtitle: "State-of-the-art manufacturing facility",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923721/AVI_4278-min_c7ljxa.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923721/AVI_4278-min_c7ljxa.jpg")
     },
     {
       title: "Professional Installation",
       subtitle: "Precision fitting by skilled craftsmen",
-      image: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923815/AVI_4205_cwtbg4.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923815/AVI_4205_cwtbg4.jpg")
     },
     {
       title: "Quality Assurance",
       subtitle: "25+ years of excellence in UAE",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923927/AVI_4146_kxza4d.jpg",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750923927/AVI_4146_kxza4d.jpg")
     }
   ]
 
@@ -79,7 +129,7 @@ const Hero = () => {
             <div
               className="w-full h-full bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: `url(${slides[currentSlide].image})`,
+                backgroundImage: `url(${getResponsiveImage(slides[currentSlide])})`,
               }}
             />
             <div className="absolute inset-0 bg-black/50" />
