@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Scissors, Wrench, Truck, CheckCircle, Factory } from 'lucide-react'
@@ -40,7 +40,7 @@ const Services = () => {
 
   // Define service type
   type Service = {
-    icon: any;
+    icon: React.ElementType;
     title: string;
     description: string;
     features: string[];
