@@ -38,7 +38,7 @@ const Hero = () => {
     },
     {
       icon: Users,
-      title: "5000+ Kitchens/Year",
+      title: "3000+ Kitchens/Year",
       subtitle: "Precision crafted with natural elegance"
     },
     {

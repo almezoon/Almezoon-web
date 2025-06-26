@@ -21,7 +21,7 @@ const Header = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Products', href: '#products' },
-    { name: 'Clients', href: '#clients' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -41,12 +41,11 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">AM</span>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src="/images/logo.png" alt="Al Mezoon Logo" className="w-full h-full" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Al Mezoon</h1>
-              <p className="text-xs text-gray-600">Marbles & Granites</p>
+              <h1 className="text-sm font-medium text-gray-900">Al Mezoon marbles and granites ind.L.L.C</h1>
             </div>
           </motion.div>
 

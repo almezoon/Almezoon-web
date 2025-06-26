@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Facebook, Instagram, Youtube, MessageCircle, Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import { Facebook, Instagram, Youtube, MessageCircle, Phone, Mail, MapPin, ArrowUp, Linkedin } from 'lucide-react'
 
 const Footer = () => {
   const [ref, inView] = useInView({
@@ -25,7 +25,7 @@ const Footer = () => {
       { name: 'About', href: '#about' },
       { name: 'Services', href: '#services' },
       { name: 'Products', href: '#products' },
-      { name: 'Clients', href: '#clients' },
+      { name: 'Projects', href: '#projects' },
       { name: 'Contact', href: '#contact' }
     ]
   }
@@ -40,6 +40,11 @@ const Footer = () => {
       name: 'Facebook',
       href: 'https://www.facebook.com/profile.php?id=100063595631081',
       icon: Facebook
+    },
+    {
+      name: 'LinkedIn',
+      href: '#',
+      icon: Linkedin
     },
     {
       name: 'YouTube',
@@ -73,12 +78,11 @@ const Footer = () => {
             >
               {/* Logo */}
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">AM</span>
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <img src="/images/logo.png" alt="Al Mezoon Logo" className="w-full h-full" />
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold text-white">Al Mezoon</h1>
-                  <p className="text-xs text-gray-400">Marbles & Granites</p>
+                  <h1 className="text-sm font-medium text-white">Al Mezoon marbles and granites ind.L.L.C</h1>
                 </div>
               </div>
 
@@ -207,7 +211,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © 2025 Al Mezoon Marbles & Granites Ind. LLC. All rights reserved.
+              © 2025 Al Mezoon marbles and granites ind.L.L.C. All rights reserved.
             </p>
             
             <div className="flex space-x-6 text-sm">

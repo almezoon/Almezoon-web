@@ -36,7 +36,6 @@ const Services = () => {
 
   const stats = [
     { icon: Factory, number: "1800", label: "SqM Facility" },
-    { icon: Settings, number: "2500+", label: "Projects Annually" },
     { icon: CheckCircle, number: "25+", label: "Years Expertise" }
   ]
 
