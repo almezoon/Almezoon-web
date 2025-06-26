@@ -12,27 +12,77 @@ const About = () => {
   })
 
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  // Helper function to get responsive image URL based on screen width
+  const getResponsiveImageUrl = (baseUrl: string): { mobile: string; tablet: string; desktop: string } => {
+    // Remove any existing transformation parameters
+    const urlParts = baseUrl.split('/upload/');
+    const baseUrlWithoutParams = urlParts[0] + '/upload/' + urlParts[1].split('/').slice(1).join('/');
+    
+    return {
+      mobile: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_640,c_fill/'),
+      tablet: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_1280,c_fill/'),
+      desktop: baseUrlWithoutParams.replace('/upload/', '/upload/f_auto,q_auto,w_1600,c_fill/')
+    };
+  };
+
+  // Update window width on client side
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Define carousel image type
+  type CarouselImage = {
+    url: string;
+    title: string;
+    description: string;
+    responsiveImages: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  };
+
+  // Get appropriate image URL based on window width
+  const getResponsiveImage = (image: CarouselImage): string => {
+    if (windowWidth === 0) return image.url; // Default for SSR
+    if (windowWidth < 768) return image.responsiveImages.mobile;
+    if (windowWidth < 1280) return image.responsiveImages.tablet;
+    return image.responsiveImages.desktop;
+  };
 
   const carouselImages = [
     {
-      url: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924630/AVI_4448_zisizr.jpg",
       title: "Manufacturing Facility",
-      description: "State-of-the-art production floor"
+      description: "State-of-the-art production floor",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924630/AVI_4448_zisizr.jpg")
     },
     {
-      url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924684/AVI_4400_v2dtbt.jpg",
       title: "Precision Cutting",
-      description: "Advanced stone cutting technology"
+      description: "Advanced stone cutting technology",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924684/AVI_4400_v2dtbt.jpg")
     },
     {
-      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924667/AVI_4435_et2vgc.jpg",
       title: "Quality Materials",
-      description: "Premium stone selection"
+      description: "Premium stone selection",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924667/AVI_4435_et2vgc.jpg")
     },
     {
-      url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924935/AVI_4420_yazfsh.jpg",
       title: "Finished Products",
-      description: "Beautiful completed installations"
+      description: "Beautiful completed installations",
+      responsiveImages: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924935/AVI_4420_yazfsh.jpg")
     }
   ]
 
@@ -150,7 +200,7 @@ const About = () => {
                   className="absolute inset-0"
                 >
                   <img
-                    src={carouselImages[currentSlide].url}
+                    src={getResponsiveImage(carouselImages[currentSlide])}
                     alt={carouselImages[currentSlide].title}
                     className="w-full h-full object-cover"
                   />
@@ -240,9 +290,18 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+              {
+                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924630/AVI_4448_zisizr.jpg",
+                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924630/AVI_4448_zisizr.jpg")
+              },
+              {
+                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924684/AVI_4400_v2dtbt.jpg",
+                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924684/AVI_4400_v2dtbt.jpg")
+              },
+              {
+                url: "https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924667/AVI_4435_et2vgc.jpg",
+                responsive: getResponsiveImageUrl("https://res.cloudinary.com/dmfrfsnro/image/upload/v1750924667/AVI_4435_et2vgc.jpg")
+              }
             ].map((image, index) => (
               <motion.div
                 key={index}
@@ -252,7 +311,10 @@ const About = () => {
                 className="relative overflow-hidden rounded-lg group cursor-pointer"
               >
                 <img
-                  src={image}
+                  src={windowWidth === 0 ? image.url : 
+                       windowWidth < 768 ? image.responsive.mobile :
+                       windowWidth < 1280 ? image.responsive.tablet :
+                       image.responsive.desktop}
                   alt={`Premium Work ${index + 1}`}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
