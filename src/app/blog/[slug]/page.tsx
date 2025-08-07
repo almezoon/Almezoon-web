@@ -1634,16 +1634,20 @@ interface PageProps {
 
 export default async function BlogArticlePage({ params }: PageProps) {
   const { slug } = await params
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
   const article = articles.find(a => a.slug === slug)
 
   if (!article) {
     notFound()
   }
+
+  return <BlogArticleContent article={article} />
+}
+
+function BlogArticleContent({ article }: { article: typeof articles[0] }) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
 
   const relatedArticles = articles
     .filter(a => a.id !== article.id && (a.category === article.category || a.tags.some(tag => article.tags.includes(tag))))
