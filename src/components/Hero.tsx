@@ -176,7 +176,7 @@ const Hero = () => {
               className="inline-block mb-6"
             >
               <span className="px-4 py-2 bg-amber-600 text-white text-sm font-semibold rounded-full">
-                                    Since 2000 – UAE&apos;s Trusted Marble Experts
+                Premium Marble & Granite Fittings in UAE – Quality, Durability, Elegance
               </span>
             </motion.div>
 
@@ -187,7 +187,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
             >
-              Stone That Tells a Story
+              Transform Your Space with Premium Stone
             </motion.h1>
             
             <motion.p
@@ -196,7 +196,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-200 mb-8"
             >
-              Crafted by Nature. Perfected by Us.
+              UAE's Leading Marble & Granite Specialists Since 2000
             </motion.p>
 
             {/* Dynamic Slide Content */}
@@ -225,7 +225,7 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-lg text-gray-300 max-w-4xl mx-auto mb-12"
             >
-              Al Mezoon Marbles & Granites Industries LLC is a leading UAE-based supplier, fabricator, and installer of marble, granite, quartz, and porcelain. Trusted for over 25 years to deliver timeless stone craftsmanship.
+              From luxury kitchens to stunning floors, we fabricate and install premium marble, granite, quartz, and porcelain across the UAE. 25+ years of expertise, 3000+ projects completed, and a commitment to perfection in every detail.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -237,15 +237,24 @@ const Hero = () => {
             >
               <a
                 href="#contact"
-                className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center space-x-2"
               >
-                Get Free Consultation
+                <span>Get Free Quote</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
               <a
-                href="#products"
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                href="/#products"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-xl"
               >
-                View Our Products
+                View Our Premium Collection
+              </a>
+              <a
+                href="tel:+97165311778"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-xl flex items-center justify-center space-x-2"
+              >
+                <span>📞 Call Now</span>
               </a>
             </motion.div>
           </div>

@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -257,17 +258,110 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Map Placeholder */}
+            {/* Client Testimonials */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 1.2 }}
+              className="bg-amber-50 border border-amber-200 rounded-xl p-6"
+            >
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">What Our Clients Say</h4>
+              <div className="space-y-4">
+                <div className="bg-white rounded-lg p-4">
+                  <p className="text-gray-600 text-sm mb-2 italic">
+                    "Al Mezoon delivered exceptional quality for our luxury villa. The Calacatta marble looks stunning and their installation was flawless."
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium text-gray-900 text-sm">Sarah Al-Rashid</div>
+                      <div className="text-xs text-gray-500">Palm Jumeirah Villa Owner</div>
+                    </div>
+                    <div className="flex text-amber-400">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-4">
+                  <p className="text-gray-600 text-sm mb-2 italic">
+                    "Professional service and outstanding granite work for our hotel project. Always delivered on time and within budget."
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium text-gray-900 text-sm">Mohammed Hassan</div>
+                      <div className="text-xs text-gray-500">Hotel Project Manager</div>
+                    </div>
+                    <div className="flex text-amber-400">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg p-4">
+                  <p className="text-gray-600 text-sm mb-2 italic">
+                    "Best marble company in UAE! Their expertise in UAE climate conditions saved us from costly mistakes."
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium text-gray-900 text-sm">Ahmed Al-Mansouri</div>
+                      <div className="text-xs text-gray-500">Interior Designer, Studio 971</div>
+                    </div>
+                    <div className="flex text-amber-400">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Trust Signals */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1.4 }}
+              className="bg-gray-50 rounded-xl p-6"
+            >
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose Al Mezoon?</h4>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">25+ Years UAE Experience</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">3000+ Kitchens Installed Annually</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Trusted by IKEA, Cosentino, Danube Homes</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Licensed & Insured in UAE</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Free Consultation & Quote</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">Quality Guarantee & Warranty</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Map Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1.6 }}
               className="bg-gray-200 rounded-xl h-64 flex items-center justify-center"
             >
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                <p className="text-gray-600 font-medium">Interactive Map</p>
+                <p className="text-gray-600 font-medium">Visit Our Showroom</p>
                 <p className="text-gray-500 text-sm">Al Sajja Industrial Area, Sharjah</p>
+                <p className="text-gray-500 text-sm mt-2">Open: Sun-Thu 8AM-6PM, Fri-Sat 9AM-4PM</p>
               </div>
             </motion.div>
           </motion.div>

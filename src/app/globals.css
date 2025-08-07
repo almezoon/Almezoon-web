@@ -130,3 +130,223 @@ select:focus-visible {
 .btn-hover:hover::before {
   left: 100%;
 }
+
+/* Mobile touch optimizations */
+@media (max-width: 768px) {
+  /* Larger touch targets for mobile */
+  button, a, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing for mobile forms */
+  .form-input {
+    padding: 12px 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile-friendly cards */
+  .mobile-card {
+    margin: 8px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  
+  /* Improved text readability on mobile */
+  .mobile-text {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-nav {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* Better mobile image handling */
+  .mobile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 3px solid #d97706;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card-hover:hover {
+    border: 2px solid #000;
+  }
+  
+  .btn-hover {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: white;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(217, 119, 6, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.3);
+}
+
+/* Mobile-first breakpoints */
+.container-mobile {
+  padding: 0 16px;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container-mobile {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-mobile {
+    padding: 0 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Better form validation styles */
+.form-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-success {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #d97706;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* UAE-specific optimizations */
+.arabic-support {
+  font-family: 'Geist Sans', 'Dubai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+
+/* WhatsApp green color theme */
+.whatsapp-green {
+  background-color: #25d366;
+  color: white;
+}
+
+.whatsapp-green:hover {
+  background-color: #128c7e;
+}
+
+/* Phone number styling for UAE */
+.phone-uae {
+  font-family: 'Geist Mono', monospace;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
