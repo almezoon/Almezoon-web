@@ -42,7 +42,7 @@ export default function ServicesPage() {
     {
       icon: Wrench,
       title: "Bathroom Vanities",
-      description: "Create luxurious bathroom spaces with our premium stone vanities. Water-resistant materials perfect for UAE's climate conditions.",
+      description: "Create luxurious bathroom spaces with our premium stone vanities. Water-resistant materials perfect for UAE&apos;s climate conditions.",
       features: [
         "Moisture-resistant stone selection",
         "Custom sizing for any bathroom",

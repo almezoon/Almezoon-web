@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Calendar, User, Clock, Tag, Search, BookOpen, Lightbulb, Heart, Shield } from 'lucide-react'
+import { Calendar, User, Clock, Search, BookOpen, Lightbulb } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'

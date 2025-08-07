@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle } from 'lucide-react'
-import Link from 'next/link'
+
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -268,9 +268,9 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-gray-900 mb-4">What Our Clients Say</h4>
               <div className="space-y-4">
                 <div className="bg-white rounded-lg p-4">
-                  <p className="text-gray-600 text-sm mb-2 italic">
-                    "Al Mezoon delivered exceptional quality for our luxury villa. The Calacatta marble looks stunning and their installation was flawless."
-                  </p>
+                              <p className="text-gray-600 text-sm mb-2 italic">
+              &quot;Al Mezoon delivered exceptional quality for our luxury villa. The Calacatta marble looks stunning and their installation was flawless.&quot;
+            </p>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-medium text-gray-900 text-sm">Sarah Al-Rashid</div>
@@ -283,9 +283,9 @@ const Contact = () => {
                 </div>
                 
                 <div className="bg-white rounded-lg p-4">
-                  <p className="text-gray-600 text-sm mb-2 italic">
-                    "Professional service and outstanding granite work for our hotel project. Always delivered on time and within budget."
-                  </p>
+                              <p className="text-gray-600 text-sm mb-2 italic">
+              &quot;Professional service and outstanding granite work for our hotel project. Always delivered on time and within budget.&quot;
+            </p>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-medium text-gray-900 text-sm">Mohammed Hassan</div>
@@ -298,9 +298,9 @@ const Contact = () => {
                 </div>
 
                 <div className="bg-white rounded-lg p-4">
-                  <p className="text-gray-600 text-sm mb-2 italic">
-                    "Best marble company in UAE! Their expertise in UAE climate conditions saved us from costly mistakes."
-                  </p>
+                              <p className="text-gray-600 text-sm mb-2 italic">
+              &quot;Best marble company in UAE! Their expertise in UAE climate conditions saved us from costly mistakes.&quot;
+            </p>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-medium text-gray-900 text-sm">Ahmed Al-Mansouri</div>

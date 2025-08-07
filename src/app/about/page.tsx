@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Award, Users, Factory, CheckCircle, Clock, Target, Heart, Shield } from 'lucide-react'
+import { Award, Users, Factory, CheckCircle, Clock, Heart, Shield } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Link from 'next/link'
 
 export default function AboutPage() {
   const [ref, inView] = useInView({
@@ -101,7 +102,7 @@ export default function AboutPage() {
               Crafting Excellence Since 2000
             </h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              From a small vision to UAE's leading marble and granite specialist, discover the story behind 25 years of stone craftsmanship excellence.
+              From a small vision to UAE&apos;s leading marble and granite specialist, discover the story behind 25 years of stone craftsmanship excellence.
             </p>
           </motion.div>
         </div>
@@ -123,7 +124,7 @@ export default function AboutPage() {
                   In 2000, Al Mezoon Marbles & Granites Industries LLC was born from a simple yet ambitious vision: to bring the finest natural stone craftsmanship to the rapidly growing UAE market. What started as a small operation has evolved into one of the region's most trusted names in marble, granite, quartz, and porcelain solutions.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Our founder recognized the growing demand for premium stone installations in the UAE's booming construction and luxury residential sectors. With a commitment to quality and customer satisfaction, we established our operations in Al Sajja Industrial Area, Sharjah, strategically positioned to serve the entire UAE market.
+                  Our founder recognized the growing demand for premium stone installations in the UAE&apos;s booming construction and luxury residential sectors. With a commitment to quality and customer satisfaction, we established our operations in Al Sajja Industrial Area, Sharjah, strategically positioned to serve the entire UAE market.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Today, with over 25 years of experience, we operate from a state-of-the-art 1800 sqm facility with an additional 800 sqm warehouse, producing over 3000 kitchen installations annually while maintaining the personal touch and attention to detail that has defined us from the beginning.
@@ -282,24 +283,24 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Work with UAE's Stone Experts?
+              Ready to Work with UAE&apos;s Stone Experts?
             </h2>
             <p className="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
               Join thousands of satisfied customers who have trusted us with their premium stone installations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/#contact"
                 className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:shadow-xl"
               >
                 Get Your Free Quote
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/projects"
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
               >
                 View Our Projects
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

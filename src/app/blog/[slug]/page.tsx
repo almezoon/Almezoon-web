@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Calendar, User, Clock, Tag, ArrowLeft, Share2, BookOpen, CheckCircle } from 'lucide-react'
+import { Calendar, User, Clock, Tag, ArrowLeft, Share2, BookOpen } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { notFound } from 'next/navigation'
@@ -1629,16 +1629,17 @@ The right stone choice for your UAE bathroom vanity balances beauty, durability,
 ];
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export default function BlogArticlePage({ params }: PageProps) {
+export default async function BlogArticlePage({ params }: PageProps) {
+  const { slug } = await params
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
 
-  const article = articles.find(a => a.slug === params.slug)
+  const article = articles.find(a => a.slug === slug)
 
   if (!article) {
     notFound()

@@ -196,7 +196,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-200 mb-8"
             >
-              UAE's Leading Marble & Granite Specialists Since 2000
+              UAE&apos;s Leading Marble & Granite Specialists Since 2000
             </motion.p>
 
             {/* Dynamic Slide Content */}
