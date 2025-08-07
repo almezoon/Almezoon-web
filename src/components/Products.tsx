@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ArrowRight, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 
 const Products = () => {
   const [ref, inView] = useInView({
@@ -185,14 +185,10 @@ const Products = () => {
                   {product.description}
                 </p>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-center">
                   <span className="text-amber-600 font-semibold text-sm">
                     {product.category}
                   </span>
-                  <button className="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center space-x-1 group">
-                    <span>View Details</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
                 </div>
               </div>
             </motion.div>

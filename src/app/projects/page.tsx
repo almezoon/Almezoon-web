@@ -352,10 +352,6 @@ export default function ProjectsPage() {
                       </div>
                     ))}
                   </div>
-
-                  <button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg font-medium transition-colors duration-300">
-                    View Full Project Details
-                  </button>
                 </div>
               </motion.div>
             ))}
