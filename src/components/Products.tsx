@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Star, ArrowRight } from 'lucide-react'
+import { Star, ArrowRight, Download } from 'lucide-react'
 import Link from 'next/link'
 import { Product } from '@/data/products'
 
@@ -41,9 +41,16 @@ const Products = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Premium Stone Collection
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             Discover our exquisite collection of premium marble, granite, and natural stones. Each piece is carefully selected for its beauty, durability, and unique characteristics.
           </p>
+          <button 
+            className="inline-flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg mx-auto"
+            onClick={(e) => e.preventDefault()}
+          >
+            <Download className="w-5 h-5 mr-2" />
+            Download Product Catalog
+          </button>
         </motion.div>
 
         {/* Category Filter */}
@@ -155,8 +162,12 @@ const Products = () => {
             >
               Request Custom Quote
             </a>
-            <button className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-              View Full Catalog
+            <button 
+              className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center"
+              onClick={(e) => e.preventDefault()}
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Full Catalog
             </button>
           </div>
         </motion.div>

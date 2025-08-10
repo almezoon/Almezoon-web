@@ -97,7 +97,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 shadow-sm"
+            className="bg-white rounded-2xl p-8 shadow-sm h-auto"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Free Consultation</h3>
             
@@ -179,7 +179,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
+                  rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   placeholder="Tell us about your project requirements..."
                 />
@@ -254,62 +254,6 @@ const Contact = () => {
                     <MessageCircle className="w-4 h-4" />
                     <span>Chat on WhatsApp</span>
                   </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Client Testimonials */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 1.2 }}
-              className="bg-amber-50 border border-amber-200 rounded-xl p-6"
-            >
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">What Our Clients Say</h4>
-              <div className="space-y-4">
-                <div className="bg-white rounded-lg p-4">
-                              <p className="text-gray-600 text-sm mb-2 italic">
-              &quot;Al Mezoon delivered exceptional quality for our luxury villa. The Calacatta marble looks stunning and their installation was flawless.&quot;
-            </p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-medium text-gray-900 text-sm">Sarah Al-Rashid</div>
-                      <div className="text-xs text-gray-500">Palm Jumeirah Villa Owner</div>
-                    </div>
-                    <div className="flex text-amber-400">
-                      ⭐⭐⭐⭐⭐
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4">
-                              <p className="text-gray-600 text-sm mb-2 italic">
-              &quot;Professional service and outstanding granite work for our hotel project. Always delivered on time and within budget.&quot;
-            </p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-medium text-gray-900 text-sm">Mohammed Hassan</div>
-                      <div className="text-xs text-gray-500">Hotel Project Manager</div>
-                    </div>
-                    <div className="flex text-amber-400">
-                      ⭐⭐⭐⭐⭐
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-lg p-4">
-                              <p className="text-gray-600 text-sm mb-2 italic">
-              &quot;Best marble company in UAE! Their expertise in UAE climate conditions saved us from costly mistakes.&quot;
-            </p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-medium text-gray-900 text-sm">Ahmed Al-Mansouri</div>
-                      <div className="text-xs text-gray-500">Interior Designer, Studio 971</div>
-                    </div>
-                    <div className="flex text-amber-400">
-                      ⭐⭐⭐⭐⭐
-                    </div>
-                  </div>
                 </div>
               </div>
             </motion.div>

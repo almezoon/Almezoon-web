@@ -79,13 +79,15 @@ export default function ProductDetailPage({ params }: PageProps) {
                 initial={{ opacity: 0, x: -30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6 }}
-                className="relative overflow-hidden h-full"
+                className="relative overflow-hidden h-[400px] md:h-[500px] lg:h-[600px]"
                 ref={ref}
               >
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center rounded-tl-xl rounded-bl-xl"
+                  style={{ objectPosition: '50% 50%' }}
+                  loading="eager"
                 />
                 <div className="absolute top-4 right-4">
                   <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-800">
@@ -156,13 +158,24 @@ export default function ProductDetailPage({ params }: PageProps) {
                   </div>
                 </div>
                 
-                <div className="mt-10 pt-6 border-t border-gray-200">
+                <div className="mt-10 pt-6 border-t border-gray-200 flex flex-wrap gap-4">
                   <Link 
                     href="/#contact" 
-                    className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+                    className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
                   >
                     Request Quote for {product.name}
                   </Link>
+                  
+                  <a 
+                    href="#" 
+                    className="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download Product Catalog
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -183,11 +196,12 @@ export default function ProductDetailPage({ params }: PageProps) {
                   <Link href={`/products/${relProduct.id}`} key={relProduct.id}>
                     <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
                       {/* Product Image */}
-                      <div className="relative overflow-hidden">
+                      <div className="relative overflow-hidden h-64">
                         <img
                           src={relProduct.image}
                           alt={relProduct.name}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
