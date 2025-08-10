@@ -87,9 +87,18 @@ const Testimonials = () => {
   return (
     <section 
       id="testimonials" 
-      className="py-20 relative bg-gradient-to-b from-white to-amber-50"
+      className="py-20 relative"
+      style={{
+        backgroundImage: 'url(https://wallpapers.com/images/hd/white-texture-pictures-9c27sac284jgqqwk.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-white/30" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
