@@ -41,8 +41,13 @@ const Header = () => {
             className="flex items-center space-x-2"
           >
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 flex items-center justify-center">
-                <img src="/images/logo.png" alt="Al Mezoon Logo" className="w-full h-full" />
+              <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/images/logo.png" 
+                  alt="Al Mezoon Logo" 
+                  className="w-full h-auto object-contain" 
+                  style={{ aspectRatio: '1/1' }}
+                />
               </div>
               <div>
                 <h1 className="text-sm font-medium text-gray-900">Al Mezoon marbles and granites ind.L.L.C</h1>

@@ -5,6 +5,15 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 
+// Project images for testimonials
+const projectImages = [
+  "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Luxury kitchen with marble countertops
+  "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Elegant bathroom with marble vanity
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Modern living room with marble flooring
+  "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Hotel lobby with marble columns
+  "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"  // Office with marble reception desk
+]
+
 const testimonials = [
   {
     id: 1,
@@ -13,7 +22,8 @@ const testimonials = [
     position: "Palm Jumeirah Villa Owner",
     rating: 5,
     image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    project: "Residential Villa Marble Installation"
+    project: "Residential Villa Marble Installation",
+    projectImage: projectImages[0]
   },
   {
     id: 2,
@@ -22,7 +32,8 @@ const testimonials = [
     position: "Hotel Project Manager",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    project: "Commercial Hotel Renovation"
+    project: "Commercial Hotel Renovation",
+    projectImage: projectImages[3]
   },
   {
     id: 3,
@@ -31,7 +42,8 @@ const testimonials = [
     position: "Interior Designer, Studio 971",
     rating: 5,
     image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    project: "Multiple Design Projects"
+    project: "Multiple Design Projects",
+    projectImage: projectImages[2]
   },
   {
     id: 4,
@@ -40,7 +52,8 @@ const testimonials = [
     position: "Kitchen Design Specialist, IKEA",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    project: "Kitchen Countertop Partnership"
+    project: "Kitchen Countertop Partnership",
+    projectImage: projectImages[0]
   },
   {
     id: 5,
@@ -49,7 +62,8 @@ const testimonials = [
     position: "Facilities Manager, Emirates Tower",
     rating: 5,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-    project: "Commercial Office Renovation"
+    project: "Commercial Office Renovation",
+    projectImage: projectImages[4]
   }
 ]
 
@@ -168,8 +182,12 @@ const Testimonials = () => {
               <div className="lg:col-span-2 bg-amber-50 p-8 flex flex-col justify-center items-center">
                 <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">Project Highlight</h4>
                 <p className="text-gray-600 text-center mb-6">{featuredTestimonials[0].project}</p>
-                <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-400">Project Image</span>
+                <div className="w-full h-64 rounded-lg overflow-hidden shadow-md">
+                  <img 
+                    src={featuredTestimonials[0].projectImage} 
+                    alt={`${featuredTestimonials[0].project} by Al Mezoon`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
