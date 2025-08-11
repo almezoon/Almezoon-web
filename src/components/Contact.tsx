@@ -91,13 +91,38 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Quick Contact Info Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {contactInfo.map((info, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+              className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mb-3">
+                  <info.icon className="w-5 h-5 text-amber-600" />
+                </div>
+                <h4 className="text-md font-semibold text-gray-900 mb-1">{info.title}</h4>
+                {info.details.map((detail, detailIndex) => (
+                  <p key={detailIndex} className="text-gray-600 text-sm">
+                    {detail}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 shadow-sm h-fit self-start"
+            className="lg:col-span-3 bg-white rounded-2xl p-8 shadow-sm"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Free Consultation</h3>
             
@@ -195,47 +220,15 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Right Column - Additional Info */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-8"
+            className="lg:col-span-2 space-y-6"
           >
-            {/* Contact Cards */}
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-amber-600" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h4>
-                      {info.details.map((detail, detailIndex) => (
-                        <p key={detailIndex} className="text-gray-600 text-sm">
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
             {/* WhatsApp CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="bg-green-50 border border-green-200 rounded-xl p-6"
-            >
+            <div className="bg-green-50 border border-green-200 rounded-xl p-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
                   <MessageCircle className="w-6 h-6 text-white" />
@@ -256,58 +249,41 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Trust Signals */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 1.4 }}
-              className="bg-gray-50 rounded-xl p-6"
-            >
+            <div className="bg-gray-50 rounded-xl p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose Al Mezoon?</h4>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                   <span className="text-gray-700 text-sm">25+ Years UAE Experience</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">3000+ Kitchens Installed Annually</span>
+                  <span className="text-gray-700 text-sm">3000+ Kitchens Annually</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">Trusted by IKEA, Cosentino, Danube Homes</span>
+                  <span className="text-gray-700 text-sm">Trusted by Major Brands</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">Licensed & Insured in UAE</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">Free Consultation & Quote</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">Quality Guarantee & Warranty</span>
+                  <span className="text-gray-700 text-sm">Licensed & Insured</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Map Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 1.6 }}
-              className="bg-gray-200 rounded-xl h-64 flex items-center justify-center"
-            >
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                <p className="text-gray-600 font-medium">Visit Our Showroom</p>
-                <p className="text-gray-500 text-sm">Al Sajja Industrial Area, Sharjah</p>
-                <p className="text-gray-500 text-sm mt-2">Open: Sun-Thu 8AM-6PM, Fri-Sat 9AM-4PM</p>
+            <div className="bg-gray-200 rounded-xl overflow-hidden h-64">
+              <div className="h-full flex items-center justify-center">
+                <div className="text-center">
+                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
+                  <p className="text-gray-600 font-medium">Visit Our Showroom</p>
+                  <p className="text-gray-500 text-sm">Al Sajja Industrial Area, Sharjah</p>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
