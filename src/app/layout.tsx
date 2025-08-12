@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     description: "Leading UAE stone specialists. 25+ years experience, 3000+ kitchens annually. Premium marble, granite & quartz solutions.",
     images: ["/images/logo.png"],
   },
+  icons: {
+    icon: [
+      { url: "/images/logo.png", type: "image/png", sizes: "32x32" },
+      { url: "/images/logo.png", type: "image/png", sizes: "16x16" },
+    ],
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   other: {
     "geo.region": "AE-SH",
     "geo.placename": "Sharjah",
@@ -154,7 +162,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Al Mezoon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.png" type="image/png" sizes="32x32" />
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
       </head>
