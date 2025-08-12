@@ -162,7 +162,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Al Mezoon" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
-        <link rel="icon" href="/images/logo.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/images/logo.png?v=2" type="image/png" sizes="32x32" />
+        <link rel="shortcut icon" href="/images/logo.png?v=2" type="image/png" />
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
       </head>
