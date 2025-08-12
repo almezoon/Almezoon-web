@@ -242,8 +242,8 @@ const About = () => {
               </div>
             </div>
             
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4">
+            {/* Floating Badge - moved to top-left */}
+            <div className="absolute -top-6 -left-6 bg-white rounded-lg shadow-lg p-4">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
                   <Factory className="w-6 h-6 text-amber-600" />

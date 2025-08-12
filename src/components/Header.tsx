@@ -50,7 +50,10 @@ const Header = () => {
                 />
               </div>
               <div>
-                <h1 className="text-sm font-medium text-gray-900">Al Mezoon marbles and granites ind.L.L.C</h1>
+                <h1 className="text-sm font-semibold text-gray-900 leading-tight">
+                  <span className="bg-gradient-to-r from-amber-600 to-amber-500 bg-clip-text text-transparent">Al Mezoon</span>
+                  <span className="text-gray-700 font-medium tracking-wide"> marbles and granites ind.L.L.C</span>
+                </h1>
               </div>
             </Link>
           </motion.div>
